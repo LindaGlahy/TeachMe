@@ -1,4 +1,4 @@
-![Banner TeachMe](https://raw.githubusercontent.com/LindaGlahy/TeachMe/main/.github/img/banner.png)
+![Banner TeachMe](./images/banner.png)
 
 # TeachMe - Plataforma Inteligente de Explicadores 📘👩‍🏫
 
