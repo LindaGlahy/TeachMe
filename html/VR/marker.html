@@ -1,0 +1,41 @@
+<!-- include A-Frame obviously -->
+
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+
+<!-- include ar.js for A-Frame -->
+
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
+<body style='margin : 0px; overflow: hidden;'>
+
+<a-scene embedded arjs>
+
+    <a-assets>
+        <img id="poster" src="../../images/VR/poster a3.png" />
+        <a-asset-item id="duckmaster" src='./duckTextures/duckmaster.glb'></a-asset-item>
+        <a-asset-item id="duckling" src='./duckTextures/duckling.glb'></a-asset-item>
+    </a-assets>
+
+<!-- define your markers -->
+
+<a-marker type="pattern" url="../../images/VR/pattern-FinalMarker.patt">
+
+<!-- here define the content to display on top of the marker -->
+
+<a-plane src="#poster" height="1" width="1" position="0 0 0" rotation="-90 0 0"></a-plane>
+
+<!------------- DUCKMASTER  ------------->
+<!----------------------------------------------->
+<a-entity gltf-model='#duckmaster' scale="0.5 0.5 0.5" position="0.5 0.5 0"></a-entity>
+
+<!------------- DUCKLING  ------------->
+<!----------------------------------------------->
+<a-entity gltf-model='#duckling' scale="0.5 0.5 0.5" position="-0.5 0.5 0"></a-entity>
+
+</a-marker>
+
+<!-- define a simple camera -->
+
+<a-entity camera></a-entity>
+
+</body>

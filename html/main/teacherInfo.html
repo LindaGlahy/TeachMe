@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeachMe - Perfil do Professor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/stylesFinal.css">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon_io/favicon-32x32.png">
+</head>
+<body>
+    <!-- Container Principal -->
+        <!------------- NAVBAR  ------------->
+        <!----------------------------------------------->
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div class="container-fluid">
+                <div class="brand">
+                    <a href="../../index.html"><img src="../../images/webapp/logo.png" alt="Duck Icon" id="logo"></a>
+                </div>
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                    <div class="controls-container ms-auto text-end">
+                        <a href="../main/aboutUS.html"><button class="btn-custom btn-aboutUs">Sobre nós</button></a>
+                        <a href="../main/FAQ.html" style="text-decoration: none;"><button class="btn-custom btn-faq">?</button></a>
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Pesquisar...">
+                            <button class="btn-search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                        <button class="btn-user" id="profilePhoto2">
+                            <i class="fa-solid fa-user"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!------------- MENU - LEFT SIDEBAR  ------------->
+        <!----------------------------------------------->
+        <div id="sidebar" class="side-menu">
+            <div class="menu-brand">
+                <a href="../../index.html" style="text-align: center;"><img src="../../images/webapp/logo.png" alt="TeachMe Logo" class="logo-img"></a>
+            </div>
+
+            <div class="menu-items studentView teacherView">
+                <i class="fa-solid fa-house"></i>
+                <a href="../../index.html" style="text-decoration: none; color: #003366;"><span>Página principal</span></a>
+            </div>
+
+            <div class="menu-items studentView teacherView" data-url="../main/leaderboard.html">
+                <i class="fa-solid fa-trophy"></i>
+                <span>Leaderboards</span>
+            </div>
+
+            <div class="menu-items studentView teacherView" data-url="../main/disciplines.html">
+                <i class="fa-solid fa-book"></i>
+                <span>Disciplinas</span>
+            </div>
+
+            <div class="menu-items studentView" data-url="../student/favourites.html">
+                <i class="fa-solid fa-heart"></i>
+                <span>Favoritos</span>
+            </div>
+
+            <div class="menu-items studentView" data-url="../main/quizzes.html">
+                <i class="fas fa-question-circle"></i>
+                <span>Quizzes</span>
+            </div>
+
+            <div class="menu-items teacherView" data-url="../main/quizzes.html">
+                <i class="fas fa-question-circle"></i>
+                <span>Quizzes Alunos</span>
+            </div>
+
+            <div class="menu-items adminView" data-url="../main/leaderboard.html">
+                <i class="fa-solid fa-chart-bar"></i>
+                <span>Leaderboards</span>
+            </div>
+
+            <div class="menu-items adminView" data-url="../admin/notifications.html">
+                <i class="fa-solid fa-comments"></i>
+                <span>Notificações</span>
+            </div>
+
+            <div class="user-level-container" id="menuItemLeaderboards">
+                <i class="fa-solid fa-certificate" data-qtd="0"></i>
+                <div id="user-level-progress"></div>
+                <div class="user-level-progress-bar"></div>
+                <div id="user-ranking">Rank 1001 / 1000</div>
+            </div>
+
+            <div class="menu-items studentView teacherView adminView" id="settingsMenuItem">
+                <i class="fa-solid fa-gear" style="color: #EB972E;"></i>
+                <span style="color: #EB972E;">Definições</span>
+            </div>
+        </div>
+
+
+                <!-- Conteúdo -->
+                <div class="container py-4">
+                    <!-- Card do Professor -->
+                    <div class="teachersInfo-card mb-4">
+                        <div class="teachersInfo-card-header">Carlos Mestre</div>
+                        <div class="p-3 p-md-4">
+                            <div class="row">
+                                <!-- Informações à esquerda -->
+                                <div class="col-md-6 mb-4 mb-md-0">
+                                    <div class="mb-3">
+                                        <label class="form-label">Email</label>
+                                        <div class="teachersInfo-box">carlos@teacher.com</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Localidade</label>
+                                        <div class="teachersInfo-box">Lisboa</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Disponibilidade</label>
+                                        <div class="teachersInfo-box">Online</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Informações à direita -->
+                                <div class="col-md-6">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" 
+                                             alt="Professor Carlos Mestre"
+                                             class="teacher-profile-img">
+                                        
+                                        <div class="teachersRating-box text-center p-2 mb-3">
+                                            <div id="main-ratingStars" class="mb-1">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star-half-stroke"></i>
+                                            </div>
+                                            <p id="rating-visualizer"class="mb-0 small">Ver avaliações</p>
+                                        </div>
+                                        
+                                        <button id="favouriteButton" class="btn-favourites w-25 w-md-auto">
+                                            <i class="fa-solid fa-heart me-2"></i>Favoritar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Disciplinas e Qualificações -->
+                    <div class="teachersInfo-card mb-4">
+                        <div class="teachersInfo-card-header">Disciplinas e Qualificações</div>
+                        <div class="p-3 p-md-4">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h3 class="section-title">Disciplinas Lecionadas</h3>
+                                    <div class="disciplines-list">
+                                        <!-- Conteúdo das disciplinas -->
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-4 mt-lg-0">
+                                    <h3 class="section-title">Diplomas</h3>
+                                    <div class="diplomes-box w-100">
+                                            <div class="text-center">
+                                                <i class="fa-solid fa-graduation-cap fa-2x mb-2"></i>
+                                                <button id="viewDiplomasBtn" style="background:none; border:none; color:black; cursor:pointer;">
+                                                    Ver Diplomas
+                                                </button>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Descrição -->
+                    <div class="description-box mb-4">
+                        <strong>DESCRIÇÃO</strong>
+                        <p class="teacher-description mb-0">
+                            Professor experiente com mais de 10 anos de prática no ensino de matemática e física. 
+                            Especializado em preparação para exames nacionais e ensino superior. 
+                            Métodos inovadores e adaptados às necessidades individuais de cada aluno.
+                        </p>
+                    </div>
+                    
+                    <!-- Botões de Ação -->
+                    <div class="d-flex flex-column flex-md-row justify-content-center gap-3 my-5">
+                        <button id="scheduleButton" class="btn btn-success btn-lg py-3" data-bs-toggle="modal" data-bs-target="#scheduleModal">
+                            <i class="fa-solid fa-calendar-check me-2"></i>Marcar Aula
+                        </button>
+                        <button id="reviewButton" class="btn btn-warning btn-lg py-3" data-bs-toggle="modal" data-bs-target="#ratingModal">
+                            <i class="fa-solid fa-star me-2"></i>Avaliar Professor
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Marcação de Aula -->
+    <div class="modal fade" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="scheduleModalLabel">Marcar Aula com <span id="modalTeacherName"class="teacher-name-modal">Carlos Mestre</span></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <form id="scheduleForm">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="location" class="form-label">Localidade*</label>
+                                <input type="text" class="form-control" id="location" name="location" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="classLocation" class="form-label">Local da aula*</label>
+                                <input type="text" class="form-control" id="classLocation" name="classLocation" required>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="date" class="form-label">Data*</label>
+                                <input type="date" class="form-control" id="date" name="date" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="time" class="form-label">Hora*</label>
+                                <input type="time" class="form-control" id="time" name="time" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Disciplina(s)*</label>
+                            <div id="disciplines-container">
+                                <!-- Preenchido por JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="observations" class="form-label">Observações</label>
+                            <textarea class="form-control" id="observations" name="observations" rows="3" placeholder="Escreva aqui as suas observações..."></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Solicitar Aula</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Avaliação -->
+    <div class="modal fade" id="ratingModal" tabindex="-1" aria-labelledby="ratingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-warning text-dark">
+                    <h5 class="modal-title" id="ratingModalLabel">Avaliar Professor <span id="ratingTeacherName">Carregando...</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <form id="ratingForm">
+                    <div class="modal-body">
+                        <div class="rating-stars" id="ratingStars">
+                            <i class="fas fa-star" data-rating="1"></i>
+                            <i class="fas fa-star" data-rating="2"></i>
+                            <i class="fas fa-star" data-rating="3"></i>
+                            <i class="fas fa-star" data-rating="4"></i>
+                            <i class="fas fa-star" data-rating="5"></i>
+                        </div>
+                        <input type="hidden" id="selectedRating" name="rating" value="0">
+                        <div class="mb-3">
+                            <label for="ratingComment" class="form-label">Comentário (opcional)</label>
+                            <textarea class="form-control" id="ratingComment" rows="3" placeholder="Deixe seu comentário sobre o professor..."></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-warning">Enviar Avaliação</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="module" src="../../js/views/sidebarView.js"></script>
+    <script type="module" src="../../js/views/navbarView.js"></script>
+    <script type="module" src="../../js/views/teacherInfoView.js"></script>
+    <script type="module" src="../../js/models/reviewModel.js"></script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TeachMe - Quizz</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/stylesFinal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/x-icon" href="../../images/favicon_io/favicon-32x32.png">
+</head>
+<style>
+         * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        }
+
+        body {
+        font-family: 'Poppins', sans-serif;
+        }
+
+        .side-menu {
+        position: fixed;
+        z-index: 9;
+        top: 0;
+        width: 290px;
+        max-width: 100%;
+        height: 100vh;
+        background: #B3CBDE;
+        display: flex;
+        flex-direction: column;
+        transition: width 0.3s ease;
+        
+        }
+
+        .menu-brand {
+        margin: 13px 0 10px 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        }
+
+        .logo-img {
+        max-width: 87%;
+        height: auto;
+        }
+
+        .menu-items {
+        display: flex;
+        align-items: center;
+        color: #003366;
+        margin: 12px 0 12px 40px;
+        font-size: 17px;
+        font-weight: 500;
+        gap: 10px;
+        }
+
+        .menu-items p {
+        margin: 0;
+        word-break: break-word;
+        }
+
+        .menu-items:hover {
+        color: #0055aa;
+        cursor: pointer;
+        }
+
+        .user-level-container {
+        display: grid;
+        grid-template-areas:
+            "level progres"
+            "bar bar"
+            "ranking ranking";
+        color: white;
+        background-color: #003366;
+        border-radius: 15px;
+        padding: 10px;
+        margin: 30px auto 0 auto;
+        width: 90%;
+        max-width: 230px;
+        gap: 8px;
+        margin-top: 400px;
+        }
+
+        .fa-certificate {
+        grid-area: level;
+        font-size: 50px;
+        color: #ffffff;
+        margin-top: 5px;
+        margin-left: 15px;
+        position: absolute;
+        }
+
+        .fa-certificate::after {
+        content: attr(data-qtd);
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: #003366;
+        font-size: 24px;
+        }
+
+        #user-level-progress {
+        grid-area: progres;
+        font-size: 16px;
+        margin-top: 15px;
+        margin-left: 50px;
+        color: #fff;
+        }
+
+        #user-ranking {
+        grid-area: ranking;
+        color: #EB972E;
+        font-size: 14px;
+        margin-left: 50px;
+        text-align: center;
+        }
+
+        .settings {
+        margin-left: 40px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+        font-size: 16px;
+        color: #EB972E;
+        cursor: pointer;
+        margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+        .side-menu {
+            width: 80px;
+        }
+
+        .menu-items {
+            margin-left: 0;
+            justify-content: center;
+        }
+
+        .menu-items p {
+            display: none;
+        }
+
+        .user-level-container {
+            display: none;
+        }
+
+
+        .settings {
+            margin-left: 0;
+            justify-content: center;
+            gap: 0;
+        }
+        .settings p {
+            display: none;
+        }
+        }
+
+        @media (max-width: 480px) {
+        .side-menu {
+            width: 60px;
+        }
+
+        .fa-certificate {
+            font-size: 40px;
+        }
+
+        .fa-certificate::after {
+            font-size: 18px;
+        }
+
+        .user-level-container {
+            max-width: 160px;
+        }
+        }
+    </style>
+
+    
+    
+
+<body >
+    <!------------- NAVBAR  ------------->
+    <!----------------------------------------------->
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container-fluid">
+            <div class="brand">
+                <a href="../../index.html"><img src="../../images/webapp/logo.png" alt="Duck Icon" id="logo"></a>
+            </div>
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <div class="controls-container ms-auto text-end">
+                    <a href="../main/aboutUS.html"><button class="btn-custom btn-aboutUs">Sobre nós</button></a>
+                    <a href="../main/FAQ.html" style="text-decoration: none;"><button class="btn-custom btn-faq">?</button></a>
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Pesquisar...">
+                        <button class="btn-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <button class="btn-user" id="profilePhoto2">
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!------------- MENU - LEFT SIDEBAR  ------------->
+    <!----------------------------------------------->
+    <div class="side-menu">
+        <div class="menu-brand">
+            <a href="../../index.html" style="text-align: center;"><img src="../../images/webapp/logo.png" alt="TeachMe Logo" class="logo-img"></a>
+        </div>
+
+        <div class="menu-items studentView teacherView">
+            <i class="fa-solid fa-house"></i>
+            <a href="../../index.html" style="text-decoration: none; color: #003366;"><span>Página principal</span></a>
+        </div>
+
+        <div class="menu-items studentView teacherView" data-url="../VR/access.html">
+            <i class="fa-solid fa-vr-cardboard"></i>
+            <span>Sala de aula</span>
+        </div>
+
+        <div class="menu-items studentView teacherView" data-url="../main/disciplines.html">
+            <i class="fa-solid fa-book"></i>
+            <span>Disciplinas</span>
+        </div>
+
+        <div class="menu-items studentView" data-url="../student/favourites.html">
+            <i class="fa-solid fa-heart"></i>
+            <span>Favoritos</span>
+        </div>
+
+        <div class="menu-items studentView" data-url="../main/quizzes.html">
+            <i class="fas fa-question-circle"></i>
+            <span>Quizzes</span>
+        </div>
+
+        <div class="menu-items teacherView" data-url="../main/quizzes.html">
+            <i class="fas fa-question-circle"></i>
+            <span>Quizzes Alunos</span>
+        </div>
+
+        <div class="menu-items adminView" data-url="../main/leaderboard.html">
+            <i class="fa-solid fa-chart-bar"></i>
+            <span>Leaderboards</span>
+        </div>
+
+        <div class="menu-items adminView" data-url="../admin/notifications.html">
+            <i class="fa-solid fa-comments"></i>
+            <span>Notificações</span>
+        </div>
+
+        <div class="user-level-container" id="menuItemLeaderboards">
+            <i class="fa-solid fa-certificate" data-qtd="0"></i>
+            <div id="user-level-progress"></div>
+            <div class="user-level-progress-bar"></div>
+            <div id="user-ranking">Rank 1001 / 1000</div>
+        </div>
+
+        <div class="menu-items studentView teacherView adminView" id="settingsMenuItem">
+            <i class="fa-solid fa-gear" style="color: #EB972E;"></i>
+            <span style="color: #EB972E;">Definições</span>
+        </div>
+    </div>
+
+    <!------------- QUIZZES - SECTION  ------------->
+    <!----------------------------------------------->
+    <div class="container" style="margin-top: 100px; margin-left: 380px;">
+        <div class="p-4 bg-white rounded shadow-lg">
+        <section id="loginSection" class="quizz-teacherView">
+            <h2 class="mb-4">Insira o e-mail do aluno a que pretende atribuir um Quizz</h2>
+            <form id="loginForm" class="mb-5">
+            <div class="mb-3">
+                <input type="email" id="loginName" class="form-control" placeholder="E-mail do aluno" required>
+            </div>
+            <button class="btn btn-primary w-100" type="submit">Criar Quizz</button>
+            </form>
+        </section>
+
+        <!------------- TEACHERS PANEL  ------------->
+        <!----------------------------------------------->
+        <section id="professorSection" class="d-none" class="quizz-teacherView">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Painel do Professor</h2>
+                <div>
+                    <button class="btn btn-success me-2" onclick="app.criarNovoQuiz()">
+                    <i class="fas fa-plus me-1"></i> Novo Quizz
+                    </button>
+                </div>
+            </div>
+            <div id="quizzesContainer" class="row g-3 mb-4"></div>
+        </section>
+
+    <div class="modal fade" class="quizz-teacherView" id="editarQuizModal" tabindex="-1" aria-labelledby="editarQuizLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editarQuizLabel">Editar Quiz</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editarQuizForm">
+                        <div class="mb-3">
+                            <label for="quizTitulo" class="form-label">Título</label>
+                            <input type="text" id="quizTitulo" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="quizDescricao" class="form-label">Descrição</label>
+                            <input type="text" id="quizDescricao" class="form-control">
+                        </div>
+                            <div id="perguntasContainer"></div>
+                            <button type="button" class="btn btn-success mb-3" id="adicionarPerguntaBtn">
+                        <i class="fas fa-plus me-1"></i> Adicionar Pergunta
+                        </button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-primary" id="guardarAlteracoesBtn">Guardar alterações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!------------- STUDENTS PANEL  ------------->
+        <!----------------------------------------------->
+        <section class="quizz-studentView" id="alunoSection" class="d-none">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Quiz do Aluno</h2>
+            </div>
+            <div id="quizListContainer" class="row g-3 mb-4"></div>
+            <form id="quizForm" class="mb-4"></form>
+            <div id="resultContainer" class="alert alert-success d-none"></div>
+        </section>
+        </div>
+    </div>
+
+    <!------------- SCRIPTS ------------->
+    <!----------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../../js/views/quizzView.js"></script>
+    <script type="module" src="../../js/views/sidebarView.js"></script>
+    <script type="module" src="../../js/views/profilePicturesView.js"></script>
+    <script type="module" src="../../js/views/profileView.js"></script>
+</body>
+</html>

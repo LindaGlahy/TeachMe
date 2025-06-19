@@ -1,0 +1,161 @@
+:root {
+    --light-blue: #e3f2fd;
+    --light-yellow: #fff9c4;
+    --primary-blue: #1976d2;
+    --accent-yellow: #ffc107;
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.teachersInfo-card {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.teachersInfo-card-header {
+    background: linear-gradient(to right, var(--light-blue), var(--light-yellow));
+    padding: 15px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary-blue);
+}
+
+.teachersInfo-box {
+    background-color: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Imagem do professor ajustada */
+.teacher-profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.teachersRating-box i {
+    color: var(--accent-yellow);
+    font-size: 1.2rem;
+}
+
+.btn-favourites {
+    background-color: rgba(255, 207, 65, 1);
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-favourites:hover {
+    background-color: rgba(243, 243, 243, 1);
+    color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    color: var(--primary-blue);
+    border-bottom: 2px solid var(--light-blue);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.diplomes-box {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 150px;
+}
+
+.diplomes-box:hover {
+    background-color: #e9ecef;
+    transform: translateY(-3px);
+}
+
+.description-box {
+    background-color: #fff4d7;
+    border-radius: 10px;
+    padding: 20px 25px;
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.6;
+    box-shadow: var(--card-shadow);
+}
+
+.description-box strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: var(--primary-blue);
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+
+    .teacher-profile-img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .diplomes-box {
+        height: 100px;
+        margin-top: 20px;
+    }
+    
+    .teachersInfo-card-header {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .teacher-profile-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    
+    .teachersInfo-box,
+    .teachers-leftInfo label {
+        font-size: 0.85rem;
+    }
+    
+    .btn-favourites {
+        font-size: 1rem;
+    }
+}
+
+        /* Adicione ao teacherInfo.css */
+#ratingStars i {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#ratingStars i.fas {
+    color: #ffc107; /* Amarelo para estrelas preenchidas */
+}
+
+#ratingStars i.far {
+    color: #ccc; /* Cinza para estrelas vazias */
+}
+
+#ratingStars i.active {
+    transform: scale(1.2);
+}

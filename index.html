@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeachMe - Main Page</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/stylesFinal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="./images/favicon_io/favicon-32x32.png">
+    <script src="https://kit.fontawesome.com/ee23fe444a.js" crossorigin="anonymous"></script>
+    <style>
+       
+    </style>
+</head>
+<body>
+
+    <!------------- NAVBAR  ------------->
+    <!----------------------------------------------->
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container-fluid">
+            <div class="brand">
+                <a href="./index.html"><img src="./images/webapp/logo.png" alt="Duck Icon" id="logo"></a>
+            </div>
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <div class="controls-container ms-auto text-end">
+                    <a href="./html/main/login.html"><button class="btn-custom login-btn" id="login-btnView">Iniciar Sessão</button></a>
+                    <a href="./html/main/aboutUS.html"><button class="btn-custom btn-aboutUs">Sobre nós</button></a>
+                    <a href="./html/main/FAQ.html" style="text-decoration: none;"><button class="btn-custom btn-faq">?</button></a>
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Pesquisar...">
+                        <button class="btn-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <button class="btn-user" id="profilePhoto2">
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!------------- INITIAL TEXT ------------->
+    <!----------------------------------------------->
+    <div class="initial-text-container">
+        <h1 id="initial-text1">Enconte um Pato Mestre e <br> comece já a aprender!</h1>
+        <h4 id="initial-text2">
+        Aulas de português, matemática, línguas e muito mais... <br>
+        Primeira aula grátis, sem compromisso! <br>
+        Pagamento 100% seguro
+        </h4>
+    </div>
+
+    <!------------- SEARCH SECTION ------------->
+    <!----------------------------------------------->
+    <form id="searchForm" class="secondSearch-container">
+        <div class="choose-class-section">
+            <span style="font-size: 30px;" class="fa-solid fa-pencil"></span>
+            <select id="disciplina" class="p-2 choose-class" id="choose-class">
+                <option value="" disabled selected>Quero aprender</option>
+                <option value="matemática">Matemática</option>
+                <option value="português">Português</option>
+                <option value="física química">Física e Química</option>
+                <option value="geologia">Geologia</option>
+                <option value="geografia">Geografia</option>
+                <option value="história">História</option>
+                <option value="biologia">Biologia</option>
+                <option value="inglês">Inglês</option>
+                <option value="francês">Francês</option>
+            </select>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="choose-location-section">
+            <i style="font-size: 30px;" class="fa-solid fa-location-dot"></i>
+            <select id="tipo" class="p-2 choose-location" id="choose-location">
+                <option value="" disabled selected>Local da aula</option>
+                <option value="presencial">Presencial</option>
+                <option value="online">Online</option>
+            </select>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="choose-region-section">
+            <i style="font-size: 30px;" class="fa-solid fa-location-crosshairs"></i>
+            <select id="local" class="p-2 choose-region" id="choose-region">
+                <option value="" disabled selected>Região</option>
+                <option value="porto">Porto</option>
+                <option value="lisboa">Lisboa</option>
+                <option value="leiria">Leiria</option>
+                <option value="vila do conde">Vila do Conde</option>
+                <option value="aveiro">Aveiro</option>
+                <option value="matosinhos">Matosinhos</option>
+                <option value="algarve">Algarve</option>
+                <option value="braga">Braga</option>
+                <option value="coimbra">Coimbra</option>
+                <option value="viseu">Viseu</option>
+                <option value="setubal">Setúbal</option>
+                <option value="faro">Faro</option>
+                <option value="guimaraes">Guimarães</option>
+                <option value="sintra">Sintra</option>
+                <option value="evora">Évora</option>
+                <option value="madeira">Madeira</option>
+                <option value="acores">Açores</option>
+            </select>
+        </div>
+
+        <button class="button-search">PESQUISAR</button>
+    </form>
+    
+    
+    <!------------- WAVE + DUCK ------------->
+    <!----------------------------------------------->
+    <div id="wave-container">
+        <img src="./images/webapp/waveDuck.png" alt="Wave and Duck">
+    </div>
+
+    <!------------- BEST TEACHERS QUICK INFORMATION ------------->
+    <!----------------------------------------------------------------------->
+    <div class="after-wave-section">
+        <h1 id="after-wave-mainHeader">OS NOSSOS MELHORES MESTRES</h1>
+        <div class="left-card">
+            <div class="after-wave-left-text-container">
+                <h1 id="after-wave-leftHeader">MATEMÁTICA</h1>
+                <p id="after-wave-paragraph">
+                    Tens problemas matemáticos e não <br>
+                    consegues ver a solução? <br>
+                    Um dos nossos melhores mestres <br>
+                    pode ser a tua solução! 
+                </p>
+                <div class="after-wave-seeAll-container">
+                    <h5 id="after-wave-seeAll">
+                        Ver todos
+                        <div id="seeMore-math" class="fa-solid fa-circle-chevron-right" style="font-size: 40px; vertical-align: middle;"></div> 
+                    </h5>
+                </div>
+            </div>
+            <div class="leftcards-container">
+                <!------------- BIG CARD ------------->
+                <!----------------------------------------------->
+                <div class="teacher-card">
+                    <div class="teacher-image-container">
+                        <img src="./images/webapp/prof1.png" alt="Vanessa Borges" class="teacher-photo">
+                        <div class="image-overlay">
+                            <h3 class="teacher-name">Vanessa Borges</h3>
+                            <p class="teacher-locations">Matosinhos (presencial & online)</p>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating">
+                            <img src="./images/webapp/star.png" alt="Star Icon" class="star-icon">
+                            <span><strong>4.9</strong> (30 avaliações)</span>
+                        </div>
+                        <p class="teacher-desc">
+                            Olá! Sou a Vanessa e sou professora de Matemática. <br>
+                            Tenho 10 anos de experiência e já ajudei muitos alunos a melhorarem as suas notas. Vamos trabalhar juntos?
+                        </p>
+                        <div class="teacher-price">
+                            <span><strong>15 €/h</strong></span>
+                            <span><strong>1ª aula grátis</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------- LITTLE CARD ------------->
+                <!----------------------------------------------->
+                <div class="teacher-card smaller">
+                    <div class="teacher-image-container">
+                        <img src="./images/webapp/prof2.png" alt="Sara Rodrigues" class="teacher-photo">
+                        <div class="image-overlay">
+                            <h3 class="teacher-name">Sara Rodrigues</h3>
+                            <p class="teacher-locations">Vila Nova de Gaia (online)</p>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating">
+                            <img src="./images/webapp/star.png" alt="Star Icon" class="star-icon">
+                            <span><strong>4.8</strong> (32 avaliações)</span>
+                        </div>
+                        <p class="teacher-desc smaller">
+                            Olá! Sou a Sara e sou professora de Matemática. <br>
+                            Tenho 2 anos de experiência e já ajudei alguns alunos a melhorarem as suas notas. Vamos solucionar juntos?
+                        </p>
+                        <div class="teacher-price smaller">
+                            <span><strong>19 €/h</strong></span>
+                            <span><strong>1ª aula grátis</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <span style='font-size: 50px; color: #003366; cursor: pointer;' id="right-arrow">&#x25B6;</span>
+            </div>
+        </div>
+
+        <div class="right-card">
+            <div class="rightcards-container">
+                <span style='font-size: 50px; color: #003366; cursor: pointer;' id="right-arrow">&#x25C0;</span>
+
+                <!------------- LITTLE CARD ------------->
+                <!----------------------------------------------->
+                <div class="teacher-card smaller">
+                    <div class="teacher-image-container">
+                        <img src="./images/webapp/prof3.png" alt="Batista Boaventura" class="teacher-photo">
+                        <div class="image-overlay">
+                            <h3 class="teacher-name">Batista Boaventura</h3>
+                            <p class="teacher-locations">Porto (presencial & online)</p>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating">
+                            <img src="./images/webapp/star.png" alt="Star Icon" class="star-icon">
+                            <span><strong>4.9</strong> (25 avaliações)</span>
+                        </div>
+                        <p class="teacher-desc smaller">
+                            Olá! Sou o Batista e sou professor de Português. <br>
+                            Tenho 5 anos de experiência e adoro mostrar que a gramática pode ser simples e interessante. Vamos explorar a nossa língua juntos?
+                        </p>
+                        <div class="teacher-price smaller">
+                            <span><strong>17 €/h</strong></span>
+                            <span><strong>1ª aula grátis</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------- BIG CARD ------------->
+                <!----------------------------------------------->
+                <div class="teacher-card">
+                    <div class="teacher-image-container">
+                        <img src="./images/webapp/prof4.png" alt="Carminho Gonçalves" class="teacher-photo">
+                        <div class="image-overlay">
+                            <h3 class="teacher-name">Carminho Gonçalves</h3>
+                            <p class="teacher-locations">Vila Nova de Gaia (online)</p>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating">
+                            <img src="./images/webapp/star.png" alt="Star Icon" class="star-icon">
+                            <span><strong>4.7</strong> (37 avaliações)</span>
+                        </div>
+                        <p class="teacher-desc">
+                            Olá! Sou a Carminho e sou professora de Português.<br>
+                            Tenho 8 anos de experiência e ajudo os alunos a escrever e comunicar com mais confiança. Vamos aprender juntos?
+                        </p>
+                        <div class="teacher-price">
+                            <span><strong>15 €/h</strong></span>
+                            <span><strong>1ª aula grátis</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="after-wave-right-text-container">
+                <h1 id="after-wave-rightHeader">PORTUGUÊS</h1>
+                <p id="after-wave-rightParagraph">
+                    Não lembra se coloca M ou N antes de P e B?
+                    Sem stresse, fala com um mestre linguístico
+                    e resolve de uma vez esse  trava-língua!
+                </p>
+                <div class="after-wave-seeAll-rightContainer">
+                    <h5 id="after-wave-seeAll">
+                        Ver todos
+                        <div id="seeMore-port" class="fa-solid fa-circle-chevron-right" style="font-size: 40px; vertical-align: middle;"></div> 
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="left-card">
+            <div class="after-wave-left-text-container">
+                <h1 id="after-wave-leftHeader">INGLÊS</h1>
+                <p id="after-wave-paragraph">
+                    Chega de confundir thought, through, though e tough,
+                    chama um dos nossos mestres para te dar um help
+                    e aprende do básico ao avançado! 
+                </p>
+                <div class="after-wave-seeAll-container">
+                    <h5 id="after-wave-seeAll">
+                        Ver todos
+                        <div id="seeMore-eng" class="fa-solid fa-circle-chevron-right" style="font-size: 40px; vertical-align: middle;"></div> 
+                    </h5>
+                </div>
+            </div>
+            <div class="leftcards-container">
+                <!------------- BIG CARD ------------->
+                <!----------------------------------------------->
+                <div class="teacher-card">
+                    <div class="teacher-image-container">
+                        <img src="./images/webapp/prof5.png" alt="Catarina Alves" class="teacher-photo">
+                        <div class="image-overlay">
+                            <h3 class="teacher-name">Catarina Alves</h3>
+                            <p class="teacher-locations">Porto (online)</p>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating">
+                            <img src="./images/webapp/star.png" alt="Star Icon" class="star-icon">
+                            <span><strong>4.9</strong> (23 avaliações)</span>
+                        </div>
+                        <p class="teacher-desc">
+                            Hi! Sou a Catarina e sou professora de Inglês <br>
+                            Tenho 3 anos de experiência e já ajudei muitos alunos a melhorar a fluência e compreensão. Ready to learn with me?
+                        </p>
+                        <div class="teacher-price">
+                            <span><strong>20 €/h</strong></span>
+                            <span><strong>1ª aula grátis</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------- LITTLE CARD ------------->
+                <!----------------------------------------------->
+                <div class="teacher-card smaller">
+                    <div class="teacher-image-container">
+                        <img src="./images/webapp/prof6.png" alt="Felipa Ribeiro" class="teacher-photo">
+                        <div class="image-overlay">
+                            <h3 class="teacher-name">Felipa Ribeiro</h3>
+                            <p class="teacher-locations">Porto (presencial & online)</p>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating">
+                            <img src="./images/webapp/star.png" alt="Star Icon" class="star-icon">
+                            <span><strong>4.6</strong> (42 avaliações)</span>
+                        </div>
+                        <p class="teacher-desc smaller">
+                            Hello! Sou a Felipa e sou professora de Inglês. <br>
+                            Tenho 6 anos de experiência e adoro ensinar de forma dinâmica e prática. Let’s learn together?
+                        </p>
+                        <div class="teacher-price smaller">
+                            <span><strong>25 €/h</strong></span>
+                            <span><strong>1ª aula grátis</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <span style='font-size: 50px; color: #003366; cursor: pointer;' id="right-arrow">&#x25B6;</span>
+            </div>
+        </div>
+
+        <div class="right-card">
+            <div class="rightcards-container">
+                <span style='font-size: 50px; color: #003366; cursor: pointer;' id="right-arrow">&#x25C0;</span>
+
+                <!------------- LITTLE CARD ------------->
+                <!----------------------------------------------->
+                <div class="teacher-card smaller">
+                    <div class="teacher-image-container">
+                        <img src="./images/webapp/prof7.png" alt="Sandra Bordeaux" class="teacher-photo">
+                        <div class="image-overlay">
+                            <h3 class="teacher-name">Sandra Bordeaux</h3>
+                            <p class="teacher-locations">Porto (presencial & online)</p>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating">
+                            <img src="./images/webapp/star.png" alt="Star Icon" class="star-icon">
+                            <span><strong>4.8</strong> (39 avaliações)</span>
+                        </div>
+                        <p class="teacher-desc smaller">
+                            Bonjour! Sou a Sandra e sou professora de Francês. <br>
+                            Tenho 12 anos de experiência e ensino com foco na conversação e cultura. On commence?
+                        </p>
+                        <div class="teacher-price smaller">
+                            <span><strong>20 €/h</strong></span>
+                            <span><strong>1ª aula grátis</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------- BIG CARD ------------->
+                <!----------------------------------------------->
+                <div class="teacher-card">
+                    <div class="teacher-image-container">
+                        <img src="./images/webapp/prof8.png" alt="Jean Dubois" class="teacher-photo">
+                        <div class="image-overlay">
+                            <h3 class="teacher-name">Jean Dubois</h3>
+                            <p class="teacher-locations">Toulouse, França (online)</p>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating">
+                            <img src="./images/webapp/star.png" alt="Star Icon" class="star-icon">
+                            <span><strong>4.9</strong> (40 avaliações)</span>
+                        </div>
+                        <p class="teacher-desc">
+                            Coucou! Sou o Jean e sou professor de Francês, natural da França. <br>
+                            Com 15 anos de experiência, adoro ajudar os alunos a ganhar confiança no idioma. Prêt à apprendre avec moi?
+                        </p>
+                        <div class="teacher-price">
+                            <span><strong>30 €/h</strong></span>
+                            <span><strong>1ª aula grátis</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="after-wave-right-text-container">
+                <h1 id="after-wave-rightHeader">FRANCÊS</h1>
+                <p id="after-wave-rightParagraph">
+                    “j'adore les blagues”, ouviu aquela
+                    piada em francês e não entendeu?
+                    Um mestre pode ser tua dépannage no francês!
+                </p>
+                <div class="after-wave-seeAll-rightContainer">
+                    <h5 id="after-wave-seeAll">
+                        Ver todos
+                        <div id="seeMore-fr" class="fa-solid fa-circle-chevron-right" style="font-size: 40px; vertical-align: middle;"></div> 
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <a href="./html/main/disciplines.html" class="disciplines">Ver todas as disciplinas</a>
+    </div>
+
+    <footer class="blue-footer-container">
+        <img src="./images/webapp/footerDucks.png" alt="footer Ducks" class="blue-footer-ducks">
+
+        <div class="blue-footer-itens">
+            <div class="blue-footer-links">
+                <a href="./index.html">Home</a> |
+                <a href="./html/main/contacts.html">Contactos</a> |
+                <a href="./html/main/store.html">Loja</a> |
+                <a href="#">Termos e condições</a> |
+                <a href="#">Política de Privacidade</a> |
+                <a href="./html/main/FAQ.html">FAQ</a> 
+            </div>
+
+            <div class="blue-footer-credits">
+            <p>Site educativo ao cumprimento do Projeto I</p>
+            </div>
+
+            <a href="./index.html"><img src="./images/webapp/logoColorNegative.png" alt="logo" class="white-logo" /></a>
+        </div>
+    </footer>
+
+    <!------------- SCRIPTS ------------->
+    <!----------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/init.js"></script>
+    <script type="module" src="./js/views/profilePicturesView.js"></script>
+    <script type="module" src="./js/views/navbarView.js"></script>
+    <script type="module" src="./js/views/profileView2_index.js"></script>
+    <script type="module" src="./js/index.js"></script>
+
+
+</body>
+</html>
